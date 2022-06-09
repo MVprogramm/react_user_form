@@ -12,7 +12,8 @@ class UserForm extends React.Component {
       student: '',
       occupation: '',
     };
-  
+
+   
   }
   
   handleChange = (event) => {
@@ -80,7 +81,8 @@ class UserForm extends React.Component {
         <button 
           className="submit-button" 
           type="submit"
-          onClick={() => this.props.onSubmit(this.state, event)}
+          // onSubmit={}
+          onSubmit={this.props.onSubmit}
         >
           Submit
         </button>

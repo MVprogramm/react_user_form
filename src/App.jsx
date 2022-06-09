@@ -6,8 +6,7 @@ import UserForm from "./UserForm.jsx";
 
 const App = () => {
 
-  const createUser = (user, event) => {
-    event.preventDefault();
+  const createUser = (user) => {
     console.log(user);
   }
 
