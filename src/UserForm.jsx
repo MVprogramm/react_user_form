@@ -15,12 +15,6 @@ class UserForm extends React.Component {
   
   }
   
-  handleSubmit = (event) => {
-    event.preventDefault();
-   
-    this.props.onSubmit(this.state);
-  };
-
   handleChange = (event) => {
     const { name, value, checked, type } = event.target;
     
@@ -85,7 +79,7 @@ class UserForm extends React.Component {
         <button 
           className="submit-button" 
           type="submit"
-          onClick={this.handleSubmit}
+          onClick={() => this.props.onSubmit(this.state, event)}
         >
           Submit
         </button>
