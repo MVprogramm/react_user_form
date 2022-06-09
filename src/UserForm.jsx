@@ -10,10 +10,14 @@ class UserForm extends React.Component {
       name: '',
       about: '',
       student: '',
-      occupation: '',
+      occupation: 'London',
     };
+  }
 
-   
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    this.props.onSubmit(this.state);
   }
   
   handleChange = (event) => {
@@ -30,7 +34,7 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <form className="login-form">
+      <form className="login-form" onSubmit={this.onSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">Name</label>
@@ -62,7 +66,6 @@ class UserForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.occupation} 
           >
-            <option value=""></option>
             <option value="London">London</option>
             <option value="New-York">New York</option>
             <option value="Sidney">Sidney</option>
@@ -81,8 +84,6 @@ class UserForm extends React.Component {
         <button 
           className="submit-button" 
           type="submit"
-          // onSubmit={}
-          onSubmit={this.props.onSubmit}
         >
           Submit
         </button>
